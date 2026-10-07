@@ -1,0 +1,10 @@
+{
+  "total_transactions": 284807,
+  "legitimate_count": 284315,
+  "fraud_count": 492,
+  "legitimate_percentage": 99.82725,
+  "fraud_percentage": 0.17275,
+  "imbalance_ratio": "1 : 577.9",
+  "numerical_ratio_legit_per_fraud": 577.88,
+  "why_accuracy_fails": "A naive majority-class classifier predicting Class=0 for 100% of transactions achieves 99.827% accuracy, yet detects 0 frauds (Recall = 0.0%). Therefore, accuracy is invalid; evaluation requires Precision, Recall, F1-Score, and PR-AUC."
+}

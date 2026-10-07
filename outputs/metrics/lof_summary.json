@@ -1,0 +1,59 @@
+{
+  "model_name": "Local Outlier Factor",
+  "algorithm_type": "Density-based k-Nearest Neighbors Novelty Detection",
+  "mathematical_mechanism": "Local Reachability Density (LRD) ratio against k-NN with novelty=True",
+  "selected_configuration": {
+    "n_neighbors": 50,
+    "contamination": 0.01,
+    "novelty": true,
+    "metric": "minkowski",
+    "p": 2,
+    "offset": -2.0542144992431965,
+    "threshold": 2.0542144992431965
+  },
+  "selected_metrics": {
+    "total_samples": 284807,
+    "actual_frauds": 492,
+    "predicted_anomalies": 2750,
+    "predicted_anomaly_rate": 0.009656,
+    "true_positives": 112,
+    "false_positives": 2638,
+    "true_negatives": 281677,
+    "false_negatives": 380,
+    "precision": 0.040727,
+    "recall": 0.227642,
+    "f1_score": 0.069093,
+    "false_positive_rate": 0.009278,
+    "false_negative_rate": 0.772358,
+    "pr_auc": 0.027125,
+    "execution_time_seconds": 108.23
+  },
+  "comparison_vs_isolation_forest": {
+    "isolation_forest": {
+      "n_estimators": 200,
+      "contamination": 0.002,
+      "precision": 0.184023,
+      "recall": 0.262195,
+      "f1_score": 0.216262,
+      "pr_auc": 0.1554,
+      "false_positives": 572,
+      "false_negatives": 363,
+      "true_positives": 129,
+      "true_negatives": 283743,
+      "execution_time_seconds": 9.46
+    },
+    "local_outlier_factor": {
+      "n_neighbors": 50,
+      "contamination": 0.01,
+      "precision": 0.040727,
+      "recall": 0.227642,
+      "f1_score": 0.069093,
+      "pr_auc": 0.027125,
+      "false_positives": 2638,
+      "false_negatives": 380,
+      "true_positives": 112,
+      "true_negatives": 281677,
+      "execution_time_seconds": 108.23
+    }
+  }
+}

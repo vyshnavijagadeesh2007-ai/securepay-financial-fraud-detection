@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "calibration_protocol": "Thresholds selected exclusively on Validation partition (N=56,961); evaluated once on untouched Test partition (N=56,962).",
+    "split_seed": 42,
+    "test_fraud_prevalence": 0.0017380007724447878,
+    "isolation_forest_test_pr_auc": 0.108084,
+    "lof_test_pr_auc": 0.218608
+  },
+  "isolation_forest": {
+    "validation_selected_thresholds": {
+      "low_false_alarm": {
+        "name": "High Precision / Low False Alarm",
+        "threshold": 0.6721680933562508,
+        "val_precision": 0.280702,
+        "val_recall": 0.163265,
+        "val_f1": 0.206452,
+        "val_fpr": 0.000721,
+        "val_fp": 41,
+        "val_tp": 16,
+        "description": "Prioritizes minimal cardholder insult and friction. Suitable for automated blocking."
+      },
+      "balanced": {
+        "name": "Balanced (Peak F1)",
+        "threshold": 0.6224469679887714,
+        "val_precision": 0.164103,
+        "val_recall": 0.326531,
+        "val_f1": 0.21843,
+        "val_fpr": 0.002867,
+        "val_fp": 163,
+        "val_tp": 32,
+        "description": "Harmonizes precision and recall by maximizing the F1-harmonic mean on validation data."
+      },
+      "high_recall": {
+        "name": "High Recall / Maximum Interception",
+        "threshold": 0.5239741492122775,
+        "val_precision": 0.045777,
+        "val_recall": 0.72449,
+        "val_f1": 0.086113,
+        "val_fpr": 0.026027,
+        "val_fp": 1480,
+        "val_tp": 71,
+        "description": "Prioritizes fraud capture (target >= 70% recall). Suitable for step-up verification (2FA/SMS OTP)."
+      },
+      "low_fpr": {
+        "name": "Controlled Low FPR (FPR <= 0.25%)",
+        "threshold": 0.6341336497256731,
+        "val_precision": 0.174497,
+        "val_recall": 0.265306,
+        "val_f1": 0.210526,
+        "val_fpr": 0.002163,
+        "val_fp": 123,
+        "val_tp": 26,
+        "description": "Enforces a strict upper bound on false alarm rate (FPR <= 0.25%) to preserve customer experience."
+      },
+      "cost_optimal": {
+        "name": "Minimum Business Cost (FP=1, FN=10)",
+        "threshold": 0.6224469679887714,
+        "val_precision": 0.164103,
+        "val_recall": 0.326531,
+        "val_f1": 0.21843,
+        "val_fpr": 0.002867,
+        "val_cost": 823.0,
+        "description": "Minimizes illustrative cost function with 10:1 penalty ratio between missed fraud and false alarm."
+      }
+    },
+    "untouched_test_evaluation": {
+      "low_false_alarm": {
+        "name": "High Precision / Low False Alarm",
+        "threshold": 0.6721680933562508,
+        "test_tp": 15,
+        "test_fp": 44,
+        "test_fn": 84,
+        "test_tn": 56819,
+        "test_precision": 0.254237,
+        "test_recall": 0.151515,
+        "test_f1": 0.189873,
+        "test_fpr": 0.000774,
+        "test_predicted_anomalies": 59,
+        "test_anomaly_rate": 0.001036,
+        "description": "Prioritizes minimal cardholder insult and friction. Suitable for automated blocking."
+      },
+      "balanced": {
+        "name": "Balanced (Peak F1)",
+        "threshold": 0.6224469679887714,
+        "test_tp": 29,
+        "test_fp": 163,
+        "test_fn": 70,
+        "test_tn": 56700,
+        "test_precision": 0.151042,
+        "test_recall": 0.292929,
+        "test_f1": 0.199313,
+        "test_fpr": 0.002867,
+        "test_predicted_anomalies": 192,
+        "test_anomaly_rate": 0.003371,
+        "description": "Harmonizes precision and recall by maximizing the F1-harmonic mean on validation data."
+      },
+      "high_recall": {
+        "name": "High Recall / Maximum Interception",
+        "threshold": 0.5239741492122775,
+        "test_tp": 77,
+        "test_fp": 1474,
+        "test_fn": 22,
+        "test_tn": 55389,
+        "test_precision": 0.049645,
+        "test_recall": 0.777778,
+        "test_f1": 0.093333,
+        "test_fpr": 0.025922,
+        "test_predicted_anomalies": 1551,
+        "test_anomaly_rate": 0.027229,
+        "description": "Prioritizes fraud capture (target >= 70% recall). Suitable for step-up verification (2FA/SMS OTP)."
+      },
+      "low_fpr": {
+        "name": "Controlled Low FPR (FPR <= 0.25%)",
+        "threshold": 0.6341336497256731,
+        "test_tp": 24,
+        "test_fp": 121,
+        "test_fn": 75,
+        "test_tn": 56742,
+        "test_precision": 0.165517,
+        "test_recall": 0.242424,
+        "test_f1": 0.196721,
+        "test_fpr": 0.002128,
+        "test_predicted_anomalies": 145,
+        "test_anomaly_rate": 0.002546,
+        "description": "Enforces a strict upper bound on false alarm rate (FPR <= 0.25%) to preserve customer experience."
+      },
+      "cost_optimal": {
+        "name": "Minimum Business Cost (FP=1, FN=10)",
+        "threshold": 0.6224469679887714,
+        "test_tp": 29,
+        "test_fp": 163,
+        "test_fn": 70,
+        "test_tn": 56700,
+        "test_precision": 0.151042,
+        "test_recall": 0.292929,
+        "test_f1": 0.199313,
+        "test_fpr": 0.002867,
+        "test_predicted_anomalies": 192,
+        "test_anomaly_rate": 0.003371,
+        "description": "Minimizes illustrative cost function with 10:1 penalty ratio between missed fraud and false alarm."
+      }
+    }
+  },
+  "local_outlier_factor": {
+    "validation_selected_thresholds": {
+      "low_false_alarm": {
+        "name": "High Precision / Low False Alarm",
+        "threshold": 3.0333810104609316,
+        "val_precision": 0.252427,
+        "val_recall": 0.265306,
+        "val_f1": 0.258706,
+        "val_fpr": 0.001354,
+        "val_fp": 77,
+        "val_tp": 26,
+        "description": "Prioritizes minimal cardholder insult and friction. Suitable for automated blocking."
+      },
+      "balanced": {
+        "name": "Balanced (Peak F1)",
+        "threshold": 2.490137704750302,
+        "val_precision": 0.190871,
+        "val_recall": 0.469388,
+        "val_f1": 0.271386,
+        "val_fpr": 0.003429,
+        "val_fp": 195,
+        "val_tp": 46,
+        "description": "Harmonizes precision and recall by maximizing the F1-harmonic mean on validation data."
+      },
+      "high_recall": {
+        "name": "High Recall / Maximum Interception",
+        "threshold": 1.9638962660744974,
+        "val_precision": 0.110759,
+        "val_recall": 0.714286,
+        "val_f1": 0.191781,
+        "val_fpr": 0.009883,
+        "val_fp": 562,
+        "val_tp": 70,
+        "description": "Prioritizes fraud capture (target >= 70% recall). Suitable for step-up verification (2FA/SMS OTP)."
+      },
+      "low_fpr": {
+        "name": "Controlled Low FPR (FPR <= 0.25%)",
+        "threshold": 2.7072829997046526,
+        "val_precision": 0.197674,
+        "val_recall": 0.346939,
+        "val_f1": 0.251852,
+        "val_fpr": 0.002427,
+        "val_fp": 138,
+        "val_tp": 34,
+        "description": "Enforces a strict upper bound on false alarm rate (FPR <= 0.25%) to preserve customer experience."
+      },
+      "cost_optimal": {
+        "name": "Minimum Business Cost (FP=1, FN=10)",
+        "threshold": 2.3704505958677973,
+        "val_precision": 0.181185,
+        "val_recall": 0.530612,
+        "val_f1": 0.27013,
+        "val_fpr": 0.004133,
+        "val_cost": 695.0,
+        "description": "Minimizes illustrative cost function with 10:1 penalty ratio between missed fraud and false alarm."
+      }
+    },
+    "untouched_test_evaluation": {
+      "low_false_alarm": {
+        "name": "High Precision / Low False Alarm",
+        "threshold": 3.0333810104609316,
+        "test_tp": 32,
+        "test_fp": 72,
+        "test_fn": 67,
+        "test_tn": 56791,
+        "test_precision": 0.307692,
+        "test_recall": 0.323232,
+        "test_f1": 0.315271,
+        "test_fpr": 0.001266,
+        "test_predicted_anomalies": 104,
+        "test_anomaly_rate": 0.001826,
+        "description": "Prioritizes minimal cardholder insult and friction. Suitable for automated blocking."
+      },
+      "balanced": {
+        "name": "Balanced (Peak F1)",
+        "threshold": 2.490137704750302,
+        "test_tp": 57,
+        "test_fp": 174,
+        "test_fn": 42,
+        "test_tn": 56689,
+        "test_precision": 0.246753,
+        "test_recall": 0.575758,
+        "test_f1": 0.345455,
+        "test_fpr": 0.00306,
+        "test_predicted_anomalies": 231,
+        "test_anomaly_rate": 0.004055,
+        "description": "Harmonizes precision and recall by maximizing the F1-harmonic mean on validation data."
+      },
+      "high_recall": {
+        "name": "High Recall / Maximum Interception",
+        "threshold": 1.9638962660744974,
+        "test_tp": 81,
+        "test_fp": 537,
+        "test_fn": 18,
+        "test_tn": 56326,
+        "test_precision": 0.131068,
+        "test_recall": 0.818182,
+        "test_f1": 0.225941,
+        "test_fpr": 0.009444,
+        "test_predicted_anomalies": 618,
+        "test_anomaly_rate": 0.010849,
+        "description": "Prioritizes fraud capture (target >= 70% recall). Suitable for step-up verification (2FA/SMS OTP)."
+      },
+      "low_fpr": {
+        "name": "Controlled Low FPR (FPR <= 0.25%)",
+        "threshold": 2.7072829997046526,
+        "test_tp": 51,
+        "test_fp": 115,
+        "test_fn": 48,
+        "test_tn": 56748,
+        "test_precision": 0.307229,
+        "test_recall": 0.515152,
+        "test_f1": 0.384906,
+        "test_fpr": 0.002022,
+        "test_predicted_anomalies": 166,
+        "test_anomaly_rate": 0.002914,
+        "description": "Enforces a strict upper bound on false alarm rate (FPR <= 0.25%) to preserve customer experience."
+      },
+      "cost_optimal": {
+        "name": "Minimum Business Cost (FP=1, FN=10)",
+        "threshold": 2.3704505958677973,
+        "test_tp": 67,
+        "test_fp": 223,
+        "test_fn": 32,
+        "test_tn": 56640,
+        "test_precision": 0.231034,
+        "test_recall": 0.676768,
+        "test_f1": 0.344473,
+        "test_fpr": 0.003922,
+        "test_predicted_anomalies": 290,
+        "test_anomaly_rate": 0.005091,
+        "description": "Minimizes illustrative cost function with 10:1 penalty ratio between missed fraud and false alarm."
+      }
+    }
+  }
+}

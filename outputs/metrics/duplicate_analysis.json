@@ -1,0 +1,11 @@
+{
+  "total_duplicate_rows_excluding_first": 1081,
+  "total_rows_involved_in_duplicate_clusters": 1854,
+  "duplicate_percentage": 0.3796,
+  "duplicate_class_0_count": 1062,
+  "duplicate_class_1_count": 19,
+  "duplicate_class_0_percentage_of_all_duplicates": 98.24,
+  "duplicate_class_1_percentage_of_all_duplicates": 1.76,
+  "contradictory_class_duplicates": 0,
+  "methodological_decision": "Retain duplicates in raw data to prevent altering original observations. For modeling and baseline evaluation, documented deduplication recommendation: Deduplication (1,081 rows) is recommended before train/test splitting to prevent synthetic data leakage or identical cluster overfitting, with legitimate micro-charges isolated."
+}

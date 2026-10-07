@@ -1,0 +1,29 @@
+{
+  "model_name": "Isolation Forest",
+  "evaluation_mode": "Untouched Holdout Test Partition (20%)",
+  "parameters": {
+    "n_estimators": 200,
+    "contamination": 0.002,
+    "max_samples": 256,
+    "random_state": 42
+  },
+  "test_set_size": 56962,
+  "test_fraud_count": 99,
+  "no_skill_baseline_prevalence": 0.0017380007724447878,
+  "metrics": {
+    "true_positives": 24,
+    "false_positives": 114,
+    "true_negatives": 56749,
+    "false_negatives": 75,
+    "precision": 0.173913,
+    "recall": 0.242424,
+    "f1_score": 0.202532,
+    "false_positive_rate": 0.002005,
+    "false_negative_rate": 0.757576,
+    "predicted_anomalies": 138,
+    "predicted_anomaly_rate": 0.002423,
+    "pr_auc": 0.108084,
+    "fit_time_seconds": 2.47,
+    "score_time_seconds": 1.01
+  }
+}

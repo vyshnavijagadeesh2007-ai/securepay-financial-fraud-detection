@@ -1,0 +1,30 @@
+{
+  "model_name": "Local Outlier Factor",
+  "evaluation_mode": "Untouched Holdout Test Partition (20%)",
+  "parameters": {
+    "n_neighbors": 50,
+    "contamination": 0.01,
+    "novelty": true,
+    "metric": "minkowski",
+    "p": 2
+  },
+  "test_set_size": 56962,
+  "test_fraud_count": 99,
+  "no_skill_baseline_prevalence": 0.0017380007724447878,
+  "metrics": {
+    "true_positives": 81,
+    "false_positives": 548,
+    "true_negatives": 56315,
+    "false_negatives": 18,
+    "precision": 0.128776,
+    "recall": 0.818182,
+    "f1_score": 0.222527,
+    "false_positive_rate": 0.009637,
+    "false_negative_rate": 0.181818,
+    "predicted_anomalies": 629,
+    "predicted_anomaly_rate": 0.011042,
+    "pr_auc": 0.218608,
+    "fit_time_seconds": 17.06,
+    "score_time_seconds": 11.36
+  }
+}

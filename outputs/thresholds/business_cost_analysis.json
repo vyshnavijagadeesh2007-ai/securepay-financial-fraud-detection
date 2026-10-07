@@ -1,0 +1,86 @@
+{
+  "disclaimer": "Cost parameters are illustrative modeling assumptions for sensitivity analysis, not proprietary SecurePay financial figures.",
+  "scenarios": [
+    {
+      "scenario": "Balanced Operational Cost (1:10)",
+      "cost_fp": 1.0,
+      "cost_fn": 10.0,
+      "isolation_forest": {
+        "val_min_cost_threshold": 0.6224469679887714,
+        "val_min_cost": 823.0,
+        "val_fp": 163,
+        "val_fn": 66,
+        "test_cost": 863.0,
+        "test_fp": 163,
+        "test_fn": 70,
+        "test_precision": 0.15104166666666666,
+        "test_recall": 0.29292929292929293
+      },
+      "local_outlier_factor": {
+        "val_min_cost_threshold": 2.3704505958677973,
+        "val_min_cost": 695.0,
+        "val_fp": 235,
+        "val_fn": 46,
+        "test_cost": 543.0,
+        "test_fp": 223,
+        "test_fn": 32,
+        "test_precision": 0.23103448275862068,
+        "test_recall": 0.6767676767676768
+      }
+    },
+    {
+      "scenario": "High Loss Asymmetry (1:20)",
+      "cost_fp": 1.0,
+      "cost_fn": 20.0,
+      "isolation_forest": {
+        "val_min_cost_threshold": 0.6111343845236898,
+        "val_min_cost": 1426.0,
+        "val_fp": 226,
+        "val_fn": 60,
+        "test_cost": 1588.0,
+        "test_fp": 228,
+        "test_fn": 68,
+        "test_precision": 0.11969111969111969,
+        "test_recall": 0.31313131313131315
+      },
+      "local_outlier_factor": {
+        "val_min_cost_threshold": 2.2162360928422724,
+        "val_min_cost": 1079.0,
+        "val_fp": 319,
+        "val_fn": 38,
+        "test_cost": 856.0,
+        "test_fp": 296,
+        "test_fn": 28,
+        "test_precision": 0.19346049046321526,
+        "test_recall": 0.7171717171717171
+      }
+    },
+    {
+      "scenario": "Severe Fraud Penalty (1:50)",
+      "cost_fp": 1.0,
+      "cost_fn": 50.0,
+      "isolation_forest": {
+        "val_min_cost_threshold": 0.5607146880584214,
+        "val_min_cost": 2577.0,
+        "val_fp": 777,
+        "val_fn": 36,
+        "test_cost": 2380.0,
+        "test_fp": 780,
+        "test_fn": 32,
+        "test_precision": 0.07910271546635184,
+        "test_recall": 0.6767676767676768
+      },
+      "local_outlier_factor": {
+        "val_min_cost_threshold": 1.919138980773204,
+        "val_min_cost": 1878.0,
+        "val_fp": 628,
+        "val_fn": 25,
+        "test_cost": 1466.0,
+        "test_fp": 616,
+        "test_fn": 17,
+        "test_precision": 0.1174785100286533,
+        "test_recall": 0.8282828282828283
+      }
+    }
+  ]
+}

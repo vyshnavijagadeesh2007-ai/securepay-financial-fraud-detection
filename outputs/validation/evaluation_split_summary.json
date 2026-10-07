@@ -1,0 +1,50 @@
+{
+  "protocol_audit": {
+    "audit_timestamp": "2026-10-07 09:26:50 UTC",
+    "audit_objective": "Rigorous Holdout Generalization Verification",
+    "previous_protocol_assessment": {
+      "description": "Historical Baseline experiments (Phase 2 & Phase 3) trained on legitimate subset of full dataset and evaluated against all 284,807 rows.",
+      "methodological_classification": "Full Population / Semi-Supervised Baseline",
+      "accuracy_of_out_of_sample_label": "Technically inaccurate for the legitimate partition because training instances were included in the evaluation set. Accurate only for fraudulent records and duplicate legitimate records."
+    },
+    "new_protocol": {
+      "methodology": "Stratified Train / Validation / Test Split (60% / 20% / 20%)",
+      "random_state": 42,
+      "leakage_safeguards": [
+        "Class target column strictly excluded from all model feature matrices",
+        "Unsupervised model training restricted strictly to Class == 0 from training partition",
+        "Training fraud events strictly excluded from unsupervised fitting",
+        "TransactionPreprocessor fitted exclusively on training legitimate partition",
+        "Validation partition used strictly for threshold inspection",
+        "Test partition held out completely and evaluated exactly once"
+      ]
+    }
+  },
+  "split_dimensions": {
+    "total_dataset_rows": 284807,
+    "total_dataset_columns": 31,
+    "train_partition": {
+      "total_rows": 170884,
+      "percentage": 60.0,
+      "legitimate_rows": 170589,
+      "fraud_rows": 295,
+      "fraud_prevalence": 0.0017263172678542169,
+      "unsupervised_train_pool_dedup": 170188,
+      "duplicates_removed": 401
+    },
+    "validation_partition": {
+      "total_rows": 56961,
+      "percentage": 20.0,
+      "legitimate_rows": 56863,
+      "fraud_rows": 98,
+      "fraud_prevalence": 0.0017204754130018785
+    },
+    "test_partition": {
+      "total_rows": 56962,
+      "percentage": 20.0,
+      "legitimate_rows": 56863,
+      "fraud_rows": 99,
+      "fraud_prevalence": 0.0017380007724447878
+    }
+  }
+}

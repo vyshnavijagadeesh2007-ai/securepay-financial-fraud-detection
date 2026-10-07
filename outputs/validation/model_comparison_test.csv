@@ -1,0 +1,3 @@
+model,evaluation_partition,config,tp,fp,fn,tn,precision,recall,f1_score,pr_auc,fpr,predicted_anomalies,fit_time_sec,score_time_sec
+Isolation Forest,"Holdout Test Set (20%, N=56,962)","c=0.002, n_trees=200",24,114,75,56749,0.173913,0.242424,0.202532,0.108084,0.002005,138,2.47,1.01
+Local Outlier Factor,"Holdout Test Set (20%, N=56,962)","k=50, c=0.010, novelty=True",81,548,18,56315,0.128776,0.818182,0.222527,0.218608,0.009637,629,17.06,11.36

@@ -1,0 +1,17 @@
+{
+  "top_negative_correlations_with_class": {
+    "V17": -0.3265,
+    "V14": -0.3025,
+    "V12": -0.2606,
+    "V10": -0.2169,
+    "V16": -0.1965
+  },
+  "top_positive_correlations_with_class": {
+    "V19": 0.0348,
+    "V21": 0.0404,
+    "V2": 0.0913,
+    "V4": 0.1334,
+    "V11": 0.1549
+  },
+  "pca_orthogonality_note": "Inter-feature correlations among V1..V28 are strictly near 0 due to PCA transformation."
+}
